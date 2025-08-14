@@ -1,0 +1,1471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JUSTNEST - Legal Support for All</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .hero-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .feature-card {
+            transition: transform 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        [data-translate] {
+            transition: opacity 0.3s ease;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-100">
+    <!-- Language Selector -->
+    <div class="language-selector">
+        <select id="languageSelect" class="bg-white border border-gray-300 rounded-md px-3 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <option value="en">English</option>
+            <option value="hi">हिंदी (Hindi)</option>
+            <option value="mr">मराठी (Marathi)</option>
+            <option value="bn">বাংলা (Bengali)</option>
+            <option value="ta">தமிழ் (Tamil)</option>
+            <option value="te">తెలుగు (Telugu)</option>
+            <option value="kn">ಕನ್ನಡ (Kannada)</option>
+            <option value="ml">മലയാളം (Malayalam)</option>
+            <option value="pa">ਪੰਜਾਬੀ (Punjabi)</option>
+            <option value="gu">ગુજરાતી (Gujarati)</option>
+        </select>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-blue-800 text-white shadow-lg">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-3">
+                <div class="flex items-center">
+                    <img src="https://static.vecteezy.com/system/resources/thumbnails/007/126/472/small/scale-of-justice-icon-free-vector.jpg" alt="JUSTNEST Logo" class="h-10 w-10 mr-3">
+                    <span class="text-2xl font-bold">JUSTNEST</span>
+                </div>
+                
+                <div class="hidden md:flex space-x-6">
+                    <a href="#" class="hover:text-blue-200 transition">Home</a>
+                    <a href="#" class="hover:text-blue-200 transition">Find Lawyers</a>
+                    <a href="#" class="hover:text-blue-200 transition">Legal Resources</a>
+                    <a href="#" class="hover:text-blue-200 transition">E-Learning</a>
+                    <a href="#" class="hover:text-blue-200 transition">Community</a>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <button id="speechToTextBtn" class="bg-green-600 text-white p-2 rounded-full hover:bg-green-700">
+                        <i class="fas fa-microphone"></i>
+                    </button>
+                    <div id="authSection">
+                        <button id="loginBtn" class="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-md transition">Login</button>
+                        <div id="userSection" class="hidden flex items-center space-x-2">
+                            <span id="welcomeMessage" class="text-white"></span>
+                            <button id="logoutBtn" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md transition">Logout</button>
+                        </div>
+                    </div>
+                    <button class="md:hidden focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu (Hidden by default) -->
+    <div id="mobileMenu" class="hidden bg-blue-700 text-white md:hidden">
+        <div class="container mx-auto px-4 py-2">
+            <div class="flex flex-col space-y-3">
+                <a href="#" class="py-2 hover:bg-blue-600 px-2 rounded">Home</a>
+                <a href="#" class="py-2 hover:bg-blue-600 px-2 rounded">Find Lawyers</a>
+                <a href="#" class="py-2 hover:bg-blue-600 px-2 rounded">Legal Resources</a>
+                <a href="#" class="py-2 hover:bg-blue-600 px-2 rounded">Women's Support</a>
+                <a href="#" class="py-2 hover:bg-blue-600 px-2 rounded">E-Learning</a>
+                <a href="#" class="py-2 hover:bg-blue-600 px-2 rounded">Community</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">Legal Rights Are Not a Privilege, But a Support</h1>
+            <p class="text-xl md:text-2xl mb-10 max-w-3xl mx-auto">JUSTNEST bridges the gap between rural communities and legal services through accessible digital solutions.</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <button class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg text-lg transition flex items-center">
+                    <i class="fas fa-gavel mr-2"></i> Post Your Legal Issue
+                    
+                </button>
+                <button class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg text-lg transition flex items-center">
+                    <i class="fas fa-user-tie mr-2"></i> Find a Lawyer
+                </button>
+                <button class="bg-yellow-500 hover:bg-yellow-600 text-white px-6 py-3 rounded-lg text-lg transition flex items-center">
+                    <i class="fas fa-video mr-2"></i> Educational Videos
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Our Services</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-blue-50 rounded-lg p-6 shadow-md hover:shadow-lg transition feature-card">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Verified Lawyers</h3>
+                    <p class="text-gray-700">Connect with verified legal professionals nearby who can address your specific legal concerns.</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="bg-green-50 rounded-lg p-6 shadow-md hover:shadow-lg transition feature-card">
+                    <div class="text-green-600 text-4xl mb-4">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Student Resources</h3>
+                    <p class="text-gray-700">Access educational videos, quizzes, and materials that help youth understand basic legal concepts.</p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="bg-yellow-50 rounded-lg p-6 shadow-md hover:shadow-lg transition feature-card">
+                    <div class="text-yellow-600 text-4xl mb-4">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Senior Citizen Support</h3>
+                    <p class="text-gray-700">Specialized resources for elderly citizens to understand their rights and available legal protections.</p>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="bg-red-50 rounded-lg p-6 shadow-md hover:shadow-lg transition feature-card">
+                    <div class="text-red-600 text-4xl mb-4">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Women's Safety</h3>
+                    <p class="text-gray-700">Safe space for women to report domestic violence issues and get confidential legal assistance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Updates Section -->
+    <section class="py-16 bg-indigo-800 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6">Stay Updated with Legal News</h2>
+            <p class="text-lg mb-10 max-w-3xl mx-auto">Our AI-powered system delivers the latest legal updates, simplified for everyone to understand, powered by Azure OpenAI.</p>
+            
+            <div class="bg-white text-gray-800 p-6 rounded-lg shadow-lg max-w-4xl mx-auto">
+                <h3 class="font-bold text-xl mb-4 text-indigo-800">Today's Legal Updates</h3>
+                <div class="space-y-4 text-left">
+                    <div class="border-b border-gray-200 pb-4">
+                        <h4 class="font-semibold">New Rural Property Rights Amendment</h4>
+                        <p class="text-gray-600">The government has announced new amendments to protect rural property rights. This affects land ownership documentation in villages.</p>
+                    </div>
+                    <div class="border-b border-gray-200 pb-4">
+                        <h4 class="font-semibold">Women's Safety Act Updates</h4>
+                        <p class="text-gray-600">New provisions added to enhance women's safety in rural areas with faster legal procedures and support systems.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold">Free Legal Aid Camps</h4>
+                        <p class="text-gray-600">Upcoming free legal aid camps in rural districts. Check schedules and locations for consultations.</p>
+                    </div>
+                </div>
+                <button class="mt-6 bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded-md transition">
+                    View All Updates
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- Enhanced Speech Recognition & Text-to-Speech Section -->
+<section class="py-16 bg-gradient-to-br from-gray-50 to-gray-100">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">Voice-Accessible Legal Support</h2>
+        <p class="text-center text-gray-600 max-w-2xl mx-auto mb-10 text-lg">For users with limited literacy or who prefer voice interaction, our system supports speech-to-text and text-to-speech in multiple Indian languages.</p>
+        
+        <div class="bg-white rounded-xl shadow-lg p-8 max-w-4xl mx-auto border border-gray-200">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Speech to Text Section -->
+                <div class="border-r md:border-r-0 md:border-b border-gray-200 pb-6 md:pb-0 md:pr-6">
+                    <h3 class="text-xl font-bold mb-4 flex items-center text-gray-700">
+                        <i class="fas fa-microphone text-blue-500 mr-2"></i> Speak Your Legal Issue
+                    </h3>
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Select Language</label>
+                        <select id="recognitionLanguage" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all">
+                            <option value="en-IN">English (India)</option>
+                            <option value="hi-IN">Hindi</option>
+                            <option value="mr-IN">Marathi</option>
+                            <option value="bn-IN">Bengali</option>
+                            <option value="ta-IN">Tamil</option>
+                            <option value="te-IN">Telugu</option>
+                            <option value="kn-IN">Kannada</option>
+                            <option value="ml-IN">Malayalam</option>
+                            <option value="pa-IN">Punjabi</option>
+                            <option value="gu-IN">Gujarati</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <button id="startRecognition" class="w-full bg-blue-500 hover:bg-blue-600 text-white px-4 py-3 rounded-lg flex items-center justify-center transition-all transform hover:scale-[1.02] shadow-md hover:shadow-lg">
+                            <i class="fas fa-microphone mr-2"></i>
+                            <span id="recognitionStatus">Start Speaking</span>
+                            <span id="recordingIndicator" class="ml-2 hidden">
+                                <span class="relative flex h-3 w-3">
+                                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                                    <span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+                                </span>
+                            </span>
+                        </button>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Recognized Text</label>
+                        <textarea id="recognizedText" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg bg-gray-50 focus:ring-2 focus:ring-blue-200 transition-all" placeholder="Your speech will appear here..." readonly></textarea>
+                    </div>
+                    <div class="mt-2 text-xs text-gray-500 flex items-center">
+                        <i class="fas fa-info-circle mr-1"></i> Works best in Chrome on desktop. Mobile support varies by browser.
+                    </div>
+                </div>
+                
+                <!-- Text to Speech Section -->
+                <div class="pt-6 md:pt-0 md:pl-6">
+                    <h3 class="text-xl font-bold mb-4 flex items-center text-gray-700">
+                        <i class="fas fa-volume-up text-green-500 mr-2"></i> Listen to Legal Information
+                    </h3>
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Select Language</label>
+                        <select id="speechLanguage" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all">
+                            <option value="en-IN">English (India)</option>
+                            <option value="hi-IN">Hindi</option>
+                            <option value="mr-IN">Marathi</option>
+                            <option value="bn-IN">Bengali</option>
+                            <option value="ta-IN">Tamil</option>
+                            <option value="te-IN">Telugu</option>
+                            <option value="kn-IN">Kannada</option>
+                            <option value="ml-IN">Malayalam</option>
+                            <option value="pa-IN">Punjabi</option>
+                            <option value="gu-IN">Gujarati</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Text to Speak</label>
+                        <textarea id="textToSpeak" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-200 transition-all" placeholder="Enter text you want to hear spoken"></textarea>
+                    </div>
+                    <div class="flex space-x-4">
+                        <button id="speakText" class="flex-1 bg-green-500 hover:bg-green-600 text-white px-4 py-3 rounded-lg flex items-center justify-center transition-all transform hover:scale-[1.02] shadow-md hover:shadow-lg">
+                            <i class="fas fa-volume-up mr-2"></i> Speak
+                        </button>
+                        <button id="stopSpeaking" class="flex-1 bg-gray-500 hover:bg-gray-600 text-white px-4 py-3 rounded-lg flex items-center justify-center transition-all transform hover:scale-[1.02] shadow-md hover:shadow-lg">
+                            <i class="fas fa-stop mr-2"></i> Stop
+                        </button>
+                    </div>
+                    <div class="mt-4">
+                        <button id="readSample" class="text-blue-500 hover:text-blue-700 text-sm flex items-center transition-colors font-medium">
+                            <i class="fas fa-book-open mr-2"></i> Read sample legal rights
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Speech Recognition Elements
+    const startRecognitionBtn = document.getElementById('startRecognition');
+    const recognitionStatus = document.getElementById('recognitionStatus');
+    const recognizedText = document.getElementById('recognizedText');
+    const recognitionLanguage = document.getElementById('recognitionLanguage');
+    const recordingIndicator = document.getElementById('recordingIndicator');
+    
+    // Text-to-Speech Elements
+    const speakTextBtn = document.getElementById('speakText');
+    const stopSpeakingBtn = document.getElementById('stopSpeaking');
+    const textToSpeak = document.getElementById('textToSpeak');
+    const speechLanguage = document.getElementById('speechLanguage');
+    const readSampleBtn = document.getElementById('readSample');
+    
+    // Check if browser supports speech recognition
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    let recognition;
+    let isRecognizing = false;
+    
+    if (SpeechRecognition) {
+        recognition = new SpeechRecognition();
+        recognition.continuous = true;
+        recognition.interimResults = true;
+        
+        recognition.onstart = function() {
+            isRecognizing = true;
+            recognitionStatus.textContent = "Listening...";
+            startRecognitionBtn.classList.remove('bg-blue-500', 'hover:bg-blue-600');
+            startRecognitionBtn.classList.add('bg-red-500', 'hover:bg-red-600');
+            recordingIndicator.classList.remove('hidden');
+        };
+        
+        recognition.onerror = function(event) {
+            console.error('Speech recognition error', event.error);
+            recognitionStatus.textContent = "Error: " + event.error;
+            resetRecognition();
+        };
+        
+        recognition.onend = function() {
+            if (isRecognizing) {
+                recognition.start(); // Restart recognition if it ended unexpectedly
+            }
+        };
+        
+        recognition.onresult = function(event) {
+            let interimTranscript = '';
+            let finalTranscript = '';
+            
+            for (let i = event.resultIndex; i < event.results.length; i++) {
+                const transcript = event.results[i][0].transcript;
+                if (event.results[i].isFinal) {
+                    finalTranscript += transcript + ' ';
+                } else {
+                    interimTranscript += transcript;
+                }
+            }
+            
+            recognizedText.value = finalTranscript + interimTranscript;
+        };
+    } else {
+        startRecognitionBtn.disabled = true;
+        recognitionStatus.textContent = "Not supported in your browser";
+        startRecognitionBtn.classList.add('bg-gray-400', 'cursor-not-allowed');
+        console.warn("Speech recognition not supported in this browser");
+    }
+    
+    // Speech recognition control
+    startRecognitionBtn.addEventListener('click', function() {
+        if (!SpeechRecognition) {
+            alert("Speech recognition is not supported in your browser. Try Chrome or Edge.");
+            return;
+        }
+        
+        if (isRecognizing) {
+            recognition.stop();
+            resetRecognition();
+        } else {
+            recognition.lang = recognitionLanguage.value;
+            try {
+                recognition.start();
+            } catch (e) {
+                alert("Please allow microphone access to use this feature.");
+                console.error("Microphone access error:", e);
+            }
+        }
+    });
+    
+    function resetRecognition() {
+        isRecognizing = false;
+        recognitionStatus.textContent = "Start Speaking";
+        startRecognitionBtn.classList.remove('bg-red-500', 'hover:bg-red-600');
+        startRecognitionBtn.classList.add('bg-blue-500', 'hover:bg-blue-600');
+        recordingIndicator.classList.add('hidden');
+    }
+    
+    // Text-to-speech implementation
+    function speak(text, lang) {
+        if ('speechSynthesis' in window) {
+            // Cancel any ongoing speech
+            window.speechSynthesis.cancel();
+            
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = lang;
+            
+            // Find a voice that matches the selected language
+            const voices = window.speechSynthesis.getVoices();
+            const preferredVoice = voices.find(voice => voice.lang === lang);
+            
+            if (preferredVoice) {
+                utterance.voice = preferredVoice;
+            }
+            
+            // Add event for when speech starts
+            utterance.onstart = function() {
+                speakTextBtn.classList.remove('bg-green-500', 'hover:bg-green-600');
+                speakTextBtn.classList.add('bg-yellow-500', 'hover:bg-yellow-600');
+                speakTextBtn.innerHTML = '<i class="fas fa-volume-up mr-2"></i> Speaking...';
+            };
+            
+            // Add event for when speech ends
+            utterance.onend = function() {
+                speakTextBtn.classList.remove('bg-yellow-500', 'hover:bg-yellow-600');
+                speakTextBtn.classList.add('bg-green-500', 'hover:bg-green-600');
+                speakTextBtn.innerHTML = '<i class="fas fa-volume-up mr-2"></i> Speak';
+            };
+            
+            window.speechSynthesis.speak(utterance);
+        } else {
+            alert("Text-to-speech is not supported in your browser.");
+        }
+    }
+    
+    speakTextBtn.addEventListener('click', function() {
+        const text = textToSpeak.value.trim();
+        if (text) {
+            speak(text, speechLanguage.value);
+        } else {
+            alert("Please enter some text to speak.");
+        }
+    });
+    
+    stopSpeakingBtn.addEventListener('click', function() {
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.cancel();
+            speakTextBtn.classList.remove('bg-yellow-500', 'hover:bg-yellow-600');
+            speakTextBtn.classList.add('bg-green-500', 'hover:bg-green-600');
+            speakTextBtn.innerHTML = '<i class="fas fa-volume-up mr-2"></i> Speak';
+        }
+    });
+    
+    // Sample legal rights to read
+    readSampleBtn.addEventListener('click', function() {
+        const lang = speechLanguage.value;
+        let sampleText = '';
+        
+        // Sample legal rights in different languages
+        const samples = {
+            'en-IN': "You have the right to remain silent. You have the right to legal representation. You are presumed innocent until proven guilty in a court of law.",
+            'hi-IN': "आपको मौन रहने का अधिकार है। आपको कानूनी प्रतिनिधित्व का अधिकार है। आपको न्यायालय में दोषी साबित होने तक निर्दोष माना जाता है।",
+            'mr-IN': "तुम्हाला मौन राहण्याचा अधिकार आहे. तुम्हाला कायदेशीर प्रतिनिधित्वाचा अधिकार आहे. कोर्टात दोषी सिद्ध होईपर्यंत तुम्ही निर्दोष आहात असे समजले जाते.",
+            'bn-IN': "আপনার নীরব থাকার অধিকার আছে। আপনার আইনি প্রতিনিধিত্বের অধিকার রয়েছে। আদালতে দোষী প্রমাণিত না হওয়া পর্যন্ত আপনি নির্দোষ বলে গণ্য হন।",
+            'ta-IN': "நீங்கள் மௌனமாக இருக்க உரிமை உண்டு. உங்களுக்கு சட்ட பிரதிநிதித்துவம் உரிமை உண்டு. நீதிமன்றத்தில் குற்றவாளி என நிரூபிக்கப்படும் வரை நீங்கள் குற்றமற்றவர் என்று கருதப்படுகிறீர்கள்.",
+            'te-IN': "మీరు మౌనంగా ఉండే హక్కు మీకు ఉంది. మీకు చట్టపరమైన ప్రాతినిధ్యం హక్కు ఉంది. కోర్టులో నేరం రుజువు కాకముందు మీరు నిర్దోషిగా భావించబడతారు.",
+            'kn-IN': "ನೀವು ಮೌನವಾಗಿರುವ ಹಕ್ಕನ್ನು ಹೊಂದಿದ್ದೀರಿ. ನಿಮಗೆ ಕಾನೂನುಬದ್ಧ ಪ್ರಾತಿನಿಧ್ಯದ ಹಕ್ಕು ಇದೆ. ನ್ಯಾಯಾಲಯದಲ್ಲಿ ಅಪರಾಧಿ ಎಂದು ಸಾಬೀತಾಗುವವರೆಗೆ ನೀವು ನಿರಪರಾಧಿ ಎಂದು ಭಾವಿಸಲಾಗುತ್ತದೆ.",
+            'ml-IN': "നിങ്ങൾക്ക് മൗനമായിരിക്കാനുള്ള അവകാശമുണ്ട്. നിങ്ങൾക്ക് നിയമപരമായ പ്രാതിനിധ്യത്തിനുള്ള അവകാശമുണ്ട്. കോടതിയിൽ കുറ്റവാളി എന്ന് തെളിയിക്കപ്പെടുന്നതുവരെ നിങ്ങൾ നിരപരാധിയാണെന്ന് കരുതപ്പെടുന്നു.",
+            'pa-IN': "ਤੁਹਾਡੇ ਕੋਲ ਚੁੱਪ ਰਹਿਣ ਦਾ ਅਧਿਕਾਰ ਹੈ। ਤੁਹਾਡੇ ਕੋਲ ਕਾਨੂੰਨੀ ਪ੍ਰਤੀਨਿਧਤਾ ਦਾ ਅਧਿਕਾਰ ਹੈ। ਤੁਹਾਨੂੰ ਅਦਾਲਤ ਵਿੱਚ ਦੋਸ਼ੀ ਸਾਬਤ ਹੋਣ ਤੱਕ ਨਿਰਦੋਸ਼ ਮੰਨਿਆ ਜਾਂਦਾ ਹੈ।",
+            'gu-IN': "તમારે મૌન રહેવાનો અધિકાર છે. તમારે કાનૂની પ્રતિનિધિત્વનો અધિકાર છે. તમે કોર્ટમાં દોષિત સાબિત થાય ત્યાં સુધી તમે નિર્દોષ ગણવામાં આવો છો."
+        };
+        
+        sampleText = samples[lang] || samples['en-IN'];
+        textToSpeak.value = sampleText;
+        speak(sampleText, lang);
+    });
+    
+    // Load voices when they become available
+    if ('speechSynthesis' in window) {
+        // Some browsers need this to load voices
+        window.speechSynthesis.getVoices();
+    }
+});
+</script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JUSTNEST - Legal Statistics</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            border-color: #667eea;
+        }
+
+        .stat-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .stat-change {
+            font-size: 0.9rem;
+            padding: 5px 10px;
+            border-radius: 20px;
+            margin-top: 10px;
+        }
+
+        .positive { background: #e8f5e8; color: #2e7d32; }
+        .negative { background: #ffebee; color: #c62828; }
+
+        .success { color: #4caf50; }
+        .warning { color: #ff9800; }
+        .danger { color: #f44336; }
+        .info { color: #2196f3; }
+        .primary { color: #9c27b0; }
+
+        .charts-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .chart-container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .chart-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
+
+        .progress-bars {
+            display: grid;
+            gap: 20px;
+        }
+
+        .progress-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .progress-label {
+            font-weight: 500;
+            color: #555;
+            min-width: 150px;
+        }
+
+        .progress-bar {
+            flex: 1;
+            height: 10px;
+            background: #e0e0e0;
+            border-radius: 5px;
+            margin: 0 15px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            border-radius: 5px;
+            transition: width 1s ease;
+        }
+
+        .progress-value {
+            font-weight: bold;
+            color: #333;
+            min-width: 60px;
+            text-align: right;
+        }
+
+        .recent-updates {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+        }
+
+        .updates-title {
+            font-size: 1.6rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .update-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            border-left: 4px solid #667eea;
+            background: #f8f9ff;
+            margin-bottom: 15px;
+            border-radius: 0 8px 8px 0;
+            transition: all 0.3s ease;
+        }
+
+        .update-item:hover {
+            background: #f0f2ff;
+            transform: translateX(5px);
+        }
+
+        .update-icon {
+            font-size: 1.5rem;
+            margin-right: 15px;
+            color: #667eea;
+        }
+
+        .update-content h4 {
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .update-content p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .update-time {
+            margin-left: auto;
+            color: #999;
+            font-size: 0.8rem;
+        }
+
+        .pie-chart {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            border-radius: 50%;
+            background: conic-gradient(
+                #4caf50 0deg 108deg,
+                #ff9800 108deg 180deg,
+                #f44336 180deg 252deg,
+                #2196f3 252deg 324deg,
+                #9c27b0 324deg 360deg
+            );
+        }
+
+        .pie-chart::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100px;
+            height: 100px;
+            background: white;
+            border-radius: 50%;
+        }
+
+        .pie-legend {
+            display: grid;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .legend-color {
+            width: 15px;
+            height: 15px;
+            border-radius: 3px;
+        }
+
+        @media (max-width: 768px) {
+            .charts-section {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .animate-count {
+            animation: countUp 2s ease-out;
+        }
+
+        @keyframes countUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-chart-bar"></i> JUSTNEST Legal Statistics</h1>
+            <p>Current Status of India's Justice System</p>
+        </div>
+
+        <!-- Main Statistics Grid -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <i class="fas fa-gavel stat-icon success"></i>
+                <div class="stat-number animate-count" data-target="45678">0</div>
+                <div class="stat-label">Total Cases Resolved</div>
+                <div class="stat-change positive">+12.5% this month</div>
+            </div>
+
+            <div class="stat-card">
+                <i class="fas fa-hourglass-half stat-icon warning"></i>
+                <div class="stat-number animate-count" data-target="23456">0</div>
+                <div class="stat-label">Active Cases</div>
+                <div class="stat-change negative">-3.2% from last month</div>
+            </div>
+
+            <div class="stat-card">
+                <i class="fas fa-users stat-icon info"></i>
+                <div class="stat-number animate-count" data-target="89234">0</div>
+                <div class="stat-label">Registered Users</div>
+                <div class="stat-change positive">+18.7% new registrations</div>
+            </div>
+
+            <div class="stat-card">
+                <i class="fas fa-user-tie stat-icon primary"></i>
+                <div class="stat-number animate-count" data-target="1245">0</div>
+                <div class="stat-label">Verified Lawyers</div>
+                <div class="stat-change positive">+8.3% new members</div>
+            </div>
+
+            <div class="stat-card">
+                <i class="fas fa-clock stat-icon danger"></i>
+                <div class="stat-number animate-count" data-target="72">0</div>
+                <div class="stat-label">Avg Resolution Time (days)</div>
+                <div class="stat-change positive">-15% improvement</div>
+            </div>
+
+            <div class="stat-card">
+                <i class="fas fa-percentage stat-icon success"></i>
+                <div class="stat-number animate-count" data-target="87">0</div>
+                <div class="stat-label">Success Rate (%)</div>
+                <div class="stat-change positive">+5.2% increase</div>
+            </div>
+        </div>
+
+        <!-- Charts Section -->
+        <div class="charts-section">
+            <div class="chart-container">
+                <div class="chart-title">Case Types (Distribution)</div>
+                <div class="pie-chart"></div>
+                <div class="pie-legend">
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #4caf50;"></div>
+                        <span>Property Disputes (30%)</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #ff9800;"></div>
+                        <span>Family Cases (20%)</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #f44336;"></div>
+                        <span>Criminal Cases (20%)</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #2196f3;"></div>
+                        <span>Labor Disputes (20%)</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #9c27b0;"></div>
+                        <span>Others (10%)</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-title">State-wise Case Status</div>
+                <div class="progress-bars">
+                    <div class="progress-item">
+                        <span class="progress-label">Uttar Pradesh</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%; background: #4caf50;" data-width="85"></div>
+                        </div>
+                        <span class="progress-value">12,345</span>
+                    </div>
+                    <div class="progress-item">
+                        <span class="progress-label">Bihar</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%; background: #2196f3;" data-width="72"></div>
+                        </div>
+                        <span class="progress-value">9,876</span>
+                    </div>
+                    <div class="progress-item">
+                        <span class="progress-label">Rajasthan</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%; background: #ff9800;" data-width="68"></div>
+                        </div>
+                        <span class="progress-value">8,234</span>
+                    </div>
+                    <div class="progress-item">
+                        <span class="progress-label">Madhya Pradesh</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%; background: #9c27b0;" data-width="60"></div>
+                        </div>
+                        <span class="progress-value">7,123</span>
+                    </div>
+                    <div class="progress-item">
+                        <span class="progress-label">Jharkhand</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%; background: #f44336;" data-width="45"></div>
+                        </div>
+                        <span class="progress-value">5,432</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Updates Section -->
+        <div class="recent-updates">
+            <div class="updates-title"><i class="fas fa-bell"></i> Recent Updates</div>
+            <div class="update-item">
+                <i class="fas fa-check-circle update-icon"></i>
+                <div class="update-content">
+                    <h4>1,234 new cases resolved this week</h4>
+                    <p>Significant progress in property disputes and family cases</p>
+                </div>
+                <span class="update-time">2 hours ago</span>
+            </div>
+            <div class="update-item">
+                <i class="fas fa-user-plus update-icon"></i>
+                <div class="update-content">
+                    <h4>45 new lawyers joined the platform</h4>
+                    <p>Expansion of legal services in rural areas</p>
+                </div>
+                <span class="update-time">4 hours ago</span>
+            </div>
+            <div class="update-item">
+                <i class="fas fa-mobile-alt update-icon"></i>
+                <div class="update-content">
+                    <h4>Mobile app downloads exceed 50,000</h4>
+                    <p>Added support for new languages for better accessibility</p>
+                </div>
+                <span class="update-time">1 day ago</span>
+            </div>
+            <div class="update-item">
+                <i class="fas fa-award update-icon"></i>
+                <div class="update-content">
+                    <h4>AI system achieved 95% accuracy</h4>
+                    <p>Better performance in case classification and matching</p>
+                </div>
+                <span class="update-time">2 days ago</span>
+            </div>
+        </div>
+
+        <!-- Additional Statistics Grid -->
+        <div class="stats-grid">
+            <div class="stat-card pulse">
+                <i class="fas fa-home stat-icon success"></i>
+                <div class="stat-number animate-count" data-target="15678">0</div>
+                <div class="stat-label">Property Disputes Resolved</div>
+                <div class="stat-change positive">Highest case volume</div>
+            </div>
+
+            <div class="stat-card">
+                <i class="fas fa-heart stat-icon danger"></i>
+                <div class="stat-number animate-count" data-target="8945">0</div>
+                <div class="stat-label">Family Cases Resolved</div>
+                <div class="stat-change positive">Rapidly growing sector</div>
+            </div>
+
+            <div class="stat-card">
+                <i class="fas fa-shield-alt stat-icon warning"></i>
+                <div class="stat-number animate-count" data-target="6789">0</div>
+                <div class="stat-label">Women Safety Cases</div>
+                <div class="stat-change positive">Special attention</div>
+            </div>
+
+            <div class="stat-card">
+                <i class="fas fa-briefcase stat-icon info"></i>
+                <div class="stat-number animate-count" data-target="12456">0</div>
+                <div class="stat-label">Labor Disputes Settled</div>
+                <div class="stat-change positive">Minimal time required</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Animate numbers on page load
+        function animateValue(element, start, end, duration) {
+            if (start === end) return;
+            const range = end - start;
+            let current = start;
+            const increment = end > start ? 1 : -1;
+            const stepTime = Math.abs(Math.floor(duration / range));
+            
+            const timer = setInterval(() => {
+                current += increment;
+                element.textContent = current.toLocaleString('en-US');
+                if (current === end) {
+                    clearInterval(timer);
+                }
+            }, stepTime);
+        }
+
+        // Initialize number animations
+        function initAnimations() {
+            const counters = document.querySelectorAll('[data-target]');
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                animateValue(counter, 0, target, 2000);
+            });
+
+            // Animate progress bars
+            setTimeout(() => {
+                const progressBars = document.querySelectorAll('.progress-fill[data-width]');
+                progressBars.forEach(bar => {
+                    const width = bar.getAttribute('data-width');
+                    bar.style.width = width + '%';
+                });
+            }, 500);
+        }
+
+        // Update statistics in real-time (simulated)
+        function updateRealTimeStats() {
+            setInterval(() => {
+                // Simulate real-time updates
+                const solvedCases = document.querySelector('[data-target="45678"]');
+                const currentValue = parseInt(solvedCases.textContent.replace(/,/g, ''));
+                const newValue = currentValue + Math.floor(Math.random() * 5) + 1;
+                solvedCases.textContent = newValue.toLocaleString('en-US');
+
+                // Update timestamp
+                const timestamps = document.querySelectorAll('.update-time');
+                timestamps[0].textContent = 'Just now';
+            }, 30000); // Update every 30 seconds
+        }
+
+        // Add interactive hover effects
+        function addInteractiveEffects() {
+            const statCards = document.querySelectorAll('.stat-card');
+            statCards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    card.style.transform = 'translateY(-10px) scale(1.02)';
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+        }
+
+        // Add click to expand functionality
+        function addClickToExpand() {
+            const updateItems = document.querySelectorAll('.update-item');
+            updateItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const content = item.querySelector('.update-content p');
+                    if (content.style.display === 'none') {
+                        content.style.display = 'block';
+                        item.style.backgroundColor = '#e8f0fe';
+                    } else {
+                        content.style.display = content.style.display === 'block' ? 'none' : 'block';
+                        item.style.backgroundColor = content.style.display === 'block' ? '#e8f0fe' : '#f8f9ff';
+                    }
+                });
+            });
+        }
+
+        // Filter statistics by category
+        function addFilterFunctionality() {
+            // Create filter buttons
+            const filterContainer = document.createElement('div');
+            filterContainer.className = 'filter-container';
+            filterContainer.style.cssText = `
+                text-align: center;
+                margin: 20px 0;
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+                flex-wrap: wrap;
+            `;
+
+            const filters = ['All', 'Resolved', 'Active', 'New'];
+            filters.forEach(filter => {
+                const button = document.createElement('button');
+                button.textContent = filter;
+                button.className = 'filter-btn';
+                button.style.cssText = `
+                    padding: 10px 20px;
+                    border: 2px solid #667eea;
+                    background: ${filter === 'All' ? '#667eea' : 'white'};
+                    color: ${filter === 'All' ? 'white' : '#667eea'};
+                    border-radius: 25px;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    font-weight: 500;
+                `;
+
+                button.addEventListener('click', () => {
+                    // Update active button
+                    document.querySelectorAll('.filter-btn').forEach(btn => {
+                        btn.style.background = 'white';
+                        btn.style.color = '#667eea';
+                    });
+                    button.style.background = '#667eea';
+                    button.style.color = 'white';
+
+                    // Filter logic would go here
+                    console.log(`Filtering by: ${filter}`);
+                });
+
+                filterContainer.appendChild(button);
+            });
+
+            document.querySelector('.header').appendChild(filterContainer);
+        }
+
+        // Initialize all features when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            initAnimations();
+            updateRealTimeStats();
+            addInteractiveEffects();
+            addClickToExpand();
+            addFilterFunctionality();
+            addExportFunctionality();
+        });
+
+        // Add responsive chart updates
+        window.addEventListener('resize', () => {
+            // Recalculate chart dimensions if needed
+            const pieCharts = document.querySelectorAll('.pie-chart');
+            pieCharts.forEach(chart => {
+                if (window.innerWidth < 768) {
+                    chart.style.width = '150px';
+                    chart.style.height = '150px';
+                } else {
+                    chart.style.width = '200px';
+                    chart.style.height = '200px';
+                }
+            });
+        });
+    </script>
+</body>
+  
+        <!-- Post Problem Form -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-8 max-w-2xl mx-auto">
+            <h3 class="text-xl font-bold mb-4">Post Your Legal Problem</h3>
+            <form id="problemForm">
+                <div class="mb-4">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Problem Category</label>
+                    <select id="problemCategory" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500" required>
+                        <option value="">Select Category</option>
+                        <option value="property">Property/Land Rights</option>
+                        <option value="family">Family Law</option>
+                        <option value="consumer">Consumer Protection</option>
+                        <option value="labor">Labor Rights</option>
+                        <option value="domestic">Domestic Violence</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Describe Your Problem</label>
+                    <textarea id="problemDescription" rows="4" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500" placeholder="Explain your legal issue in detail..." required></textarea>
+                </div>
+                <div class="mb-4">
+                    <label class="flex items-center">
+                        <input type="checkbox" id="postAnonymously" class="mr-2">
+                        <span class="text-sm text-gray-600">Post anonymously</span>
+                    </label>
+                </div>
+                <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md transition">
+                    Post Problem
+                </button>
+            </form>
+        </div>
+        
+        <!-- Problems List -->
+        <div id="problemsList" class="space-y-6">
+            <!-- Problems will be populated here -->
+        </div>
+    </div>
+</section>
+ <!-- How It Works Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">How JUSTNEST Works</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Step 1 -->
+                <div class="text-center">
+                    <div class="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-blue-600 text-2xl font-bold">1</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Register or Post Anonymously</h3>
+                    <p class="text-gray-700">Create an account or post your legal concerns anonymously in any language you prefer.</p>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="text-center">
+                    <div class="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-blue-600 text-2xl font-bold">2</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Get Connected</h3>
+                    <p class="text-gray-700">Our system matches you with appropriate legal resources or verified lawyers based on your needs.</p>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="text-center">
+                    <div class="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-blue-600 text-2xl font-bold">3</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Receive Support</h3>
+                    <p class="text-gray-700">Get guidance, educational resources, or direct legal support tailored to your specific situation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Success Stories</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <img src="/api/placeholder/60/60" alt="User" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Rajesh from Bihar</h4>
+                            <div class="text-yellow-500">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"JUSTNEST helped me understand my land rights when facing a boundary dispute. The local lawyer I found through the platform resolved my issue within weeks."</p>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <img src="/api/placeholder/60/60" alt="User" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Lakshmi from Tamil Nadu</h4>
+                            <div class="text-yellow-500">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"As a domestic violence survivor, I could speak in Tamil and get immediate support. The confidential reporting feature gave me courage to take legal action."</p>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <img src="/api/placeholder/60/60" alt="User" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Gurpreet from Punjab</h4>
+                            <div class="text-yellow-500">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"My grandfather couldn't read but could listen to legal advice in Punjabi through the text-to-speech feature. This helped us resolve his pension issues."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-8">Community Legal Support</h2>
+    
+
+    <!-- Download App Section -->
+    <section class="py-16 bg-blue-900 text-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center gap-10">
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold mb-6">Take JUSTNEST With You</h2>
+                    <p class="text-lg mb-6">Download our mobile app to access legal support anywhere, anytime. Works offline for areas with limited connectivity.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <button class="bg-black hover:bg-gray-900 px-6 py-3 rounded-lg flex items-center">
+                            <i class="fab fa-apple text-3xl mr-3"></i>
+                            <div class="text-left">
+                                <div class="text-xs">Download on the</div>
+                                <div class="text-xl font-semibold">App Store</div>
+                            </div>
+                        </button>
+                        <button class="bg-black hover:bg-gray-900 px-6 py-3 rounded-lg flex items-center">
+                            <i class="fab fa-google-play text-3xl mr-3"></i>
+                            <div class="text-left">
+                                <div class="text-xs">Get it on</div>
+                                <div class="text-xl font-semibold">Google Play</div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="/api/placeholder/300/600" alt="Mobile App" class="mx-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-10">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">JUSTNEST</h3>
+                    <p class="text-gray-400">Legal rights should be accessible to everyone, regardless of location, language, or digital literacy.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Services</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Find Lawyers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Educational Resources</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Legal Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Women's Rights</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Land Rights</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Labor Laws</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Consumer Protection</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Contact Us</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center"><i class="fas fa-phone mr-2"></i> Helpline: 1800-JUSTNEST</li>
+                        <li class="flex items-center"><i class="fas fa-envelope mr-2"></i> support@justnest.org</li>
+                    </ul>
+                    <div class="mt-4 flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-youtube fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
+                <p>&copy; 2025 JUSTNEST. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center">
+        <div class="bg-white rounded-lg shadow-xl max-w-md w-full mx-4">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-2xl font-bold text-gray-800">Login to JUSTNEST</h2>
+                    <button id="closeModal" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+                
+                <div class="mb-4 text-center">
+                    <div id="authTabs" class="flex border-b">
+                        <button id="loginTab" class="flex-1 py-2 px-4 border-b-2 border-blue-500 text-blue-600 font-semibold">Login</button>
+                        <button id="signupTab" class="flex-1 py-2 px-4 text-gray-500 hover:text-gray-700">Sign Up</button>
+                    </div>
+                </div>
+                
+                <!-- Login Form -->
+                <form id="loginForm" class="space-y-4">
+                    <div id="loginError" class="hidden bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded"></div>
+                    
+                    <div>
+                        <label for="loginEmail" class="block text-sm font-medium text-gray-700 mb-1">Email or Phone</label>
+                        <input type="text" id="loginEmail" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter your email or phone number" required>
+                    </div>
+                    
+                    <div>
+                        <label for="loginPassword" class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                        <div class="relative">
+                            <input type="password" id="loginPassword" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter your password" required>
+                            <button type="button" id="toggleLoginPassword" class="absolute right-3 top-2.5 text-gray-400 hover:text-gray-600">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center justify-between">
+                        <label class="flex items-center">
+                            <input type="checkbox" id="rememberMe" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                            <span class="ml-2 text-sm text-gray-600">Remember me</span>
+                        </label>
+                        <a href="#" class="text-sm text-blue-600 hover:text-blue-800">Forgot password?</a>
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition">
+                        <span id="loginSpinner" class="hidden">
+                            <i class="fas fa-spinner fa-spin mr-2"></i>
+                        </span>
+                        Login
+                    </button>
+                </form>
+                
+                <!-- Sign Up Form -->
+                <form id="signupForm" class="space-y-4 hidden">
+                    <div id="signupError" class="hidden bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded"></div>
+                    <div id="signupSuccess" class="hidden bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded"></div>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label for="firstName" class="block text-sm font-medium text-gray-700 mb-1">First Name</label>
+                            <input type="text" id="firstName" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="First name" required>
+                        </div>
+                        <div>
+                            <label for="lastName" class="block text-sm font-medium text-gray-700 mb-1">Last Name</label>
+                            <input type="text" id="lastName" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Last name" required>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="signupEmail" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                        <input type="email" id="signupEmail" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter your email" required>
+                    </div>
+                    
+                    <div>
+                        <label for="signupPhone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                        <input type="tel" id="signupPhone" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter your phone number" required>
+                    </div>
+                    
+                    <div>
+                        <label for="signupPassword" class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                        <div class="relative">
+                            <input type="password" id="signupPassword" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Create a password" required>
+                            <button type="button" id="toggleSignupPassword" class="absolute right-3 top-2.5 text-gray-400 hover:text-gray-600">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="mt-1 text-xs text-gray-500">
+                            Password must be at least 8 characters with letters and numbers
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="confirmPassword" class="block text-sm font-medium text-gray-700 mb-1">Confirm Password</label>
+                        <input type="password" id="confirmPassword" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Confirm your password" required>
+                    </div>
+                    
+                    <div>
+                        <label for="userType" class="block text-sm font-medium text-gray-700 mb-1">I am a:</label>
+                        <select id="userType" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                            <option value="">Select user type</option>
+                            <option value="citizen">Citizen seeking legal help</option>
+                            <option value="lawyer">Legal professional</option>
+                            <option value="student">Student/Researcher</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="flex items-center">
+                        <input type="checkbox" id="agreeTerms" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded" required>
+                        <label for="agreeTerms" class="ml-2 text-sm text-gray-600">
+                            I agree to the <a href="#" class="text-blue-600 hover:text-blue-800">Terms of Service</a> and <a href="#" class="text-blue-600 hover:text-blue-800">Privacy Policy</a>
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition">
+                        <span id="signupSpinner" class="hidden">
+                            <i class="fas fa-spinner fa-spin mr-2"></i>
+                        </span>
+                        Create Account
+                    </button>
+                </form>
+                
+                <div class="mt-6 text-center">
+                    <div class="relative">
+                        <div class="absolute inset-0 flex items-center">
+                            <div class="w-full border-t border-gray-300"></div>
+                        </div>
+                        <div class="relative flex justify-center text-sm">
+                            <span class="px-2 bg-white text-gray-500">Or continue with</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 flex space-x-4">
+                        <button class="flex-1 flex items-center justify-center px-4 py-2 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-700 hover:bg-gray-50">
+                            <i class="fab fa-google text-red-500 mr-2"></i>
+                            Google
+                        </button>
+                        <button class="flex-1 flex items-center justify-center px-4 py-2 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-700 hover:bg-gray-50">
+                            <i class="fab fa-facebook text-blue-600 mr-2"></i>
+                            Facebook
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

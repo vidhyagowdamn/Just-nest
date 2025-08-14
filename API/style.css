@@ -1,0 +1,18 @@
+.language-selector {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+}
+
+.hero-section {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/api/placeholder/1200/600');
+    background-size: cover;
+    background-position: center;
+}
+
+@media (max-width: 640px) {
+    .feature-card {
+        min-height: 200px;
+    }
+}
